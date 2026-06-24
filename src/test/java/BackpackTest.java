@@ -32,7 +32,7 @@ class BackpackTest {
 
     @Test
     void addItem_whenFull_shouldReturnFalseAndNotAddItem() {
-        // заполняем рюкзак до предела (емкость 10)
+
         for (int i = 0; i < 10; i++) {
             backpack.addItem(new Item(ItemType.TREASURE, "Gold", 0, 0, 0, 0, i));
         }
@@ -54,13 +54,10 @@ class BackpackTest {
 
     @Test
     void getItems_shouldReturnUnmodifiableList() {
-        // Сейчас getItems возвращает прямую ссылку, но мы не можем её изменить – это просто список
-        // Для проверки неизменяемости можно попробовать добавить, но в текущей реализации это возможно,
-        // поэтому тест просто проверяет, что возвращается тот же список.
+
         List<Item> items = backpack.getItems();
         assertNotNull(items);
-        // можно проверить, что добавление в возвращённый список не меняет размер рюкзака? Но это зависит от реализации.
-        // Пока просто проверяем, что список существует.
+ 
     }
 
     @Test
